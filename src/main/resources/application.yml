@@ -1,0 +1,5 @@
+app:
+  dataSource:
+    userName: ryudung
+    password: 123456
+    url: jdbc://mysql/test
