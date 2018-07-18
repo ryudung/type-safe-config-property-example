@@ -3,6 +3,10 @@ package com.example.configpropertyexample.config;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * Copyright (c) 2018 ZUM Internet, Inc.
@@ -21,6 +25,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Getter
 @Setter
 @ConfigurationProperties(prefix = "app")
+@Validated
 public class AppProperty {
 
 	private DataSource dataSource;
@@ -31,5 +36,9 @@ public class AppProperty {
 		private String url;
 		private String username;
 		private String password;
+		@NotNull
+		private String notNullField;
+		@NotEmpty
+		private String notEmptyFiled;
 	}
 }
